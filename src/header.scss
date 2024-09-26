@@ -1,0 +1,109 @@
+@use "utils";
+
+.header {
+  @include utils.flexCenter(space-between, flex-start, center);
+  padding: 20px 0px;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto; 
+  gap: 2rem;
+
+  .main{
+    min-width: 800px;
+    min-height: 100px;
+    align-items: center;
+    top: 20px;
+    left: 20px;
+    flex-wrap: nowrap;
+    display: flex;
+
+    & .direction{ 
+      
+      flex: 1;
+      flex-grow: 1;
+  
+      a{
+        color: var(--third-color);
+        margin-left: 20px;
+        font-size: 2rem;
+        text-decoration: none;
+        font-family:'Supermercado One', cursive;
+      }
+    }
+  }
+}
+
+.logo {
+  flex-wrap: wrap;
+  position: absolute;
+  right: 40%;
+  top: 20px;
+  width: 10rem;
+  margin-right: auto;
+}
+
+.btn {
+  flex-wrap: wrap;
+  position: absolute;
+  right: 0;
+  margin: auto;
+  padding: 10px 15px;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 40px;
+    background: #f2c09c;
+    width: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+  }
+
+  span{
+    position: relative;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #f36703;
+  }
+
+  svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #f36703;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+  }
+
+  &:hover{
+    &:before {
+      width: 100%;
+      background: #f9bb75;
+    }
+
+    svg {
+      transform: translateX(0);
+    }
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+}
+
+body {
+  min-width: 90%;
+}

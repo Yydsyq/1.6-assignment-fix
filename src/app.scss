@@ -1,0 +1,20 @@
+@use "utils";
+
+.app {
+  flex-direction: column;
+  max-width: 100dvw;
+  height: 100%;
+  @include utils.flexCenter(space-between, flex-start, center);
+  position: relative;
+
+  .container {
+    @include utils.flexCenter(space-between, flex-start, center);
+    flex-wrap: nowrap;
+    flex-direction: column;
+    height:100%;
+    position: relative;
+    align-self: stretch;
+    min-width: 1080px;
+    width: 100%;
+  }
+}
